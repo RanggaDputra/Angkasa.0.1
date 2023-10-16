@@ -1,0 +1,14 @@
+.input-post{
+    width: 60px;
+    height: 50px;
+    background-color:transparent;
+    border: 2px solid white;
+    border-radius: 10px;
+}
+.input-poster{
+    width: 60px;
+    height: 50px;
+    background-color:white;
+    border: 2px solid white;
+    border-radius: 10px;
+}

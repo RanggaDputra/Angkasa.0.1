@@ -1,0 +1,32 @@
+.input-login{
+    border-top:none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid #D2C2FF;
+    margin: 10px;
+}
+
+@media screen and (max-width: 576px){
+    .main{
+        background-color: burlywood;
+        width: 600px !important;
+    }
+    .img-login{
+        display: none;
+    }
+    .tag-main{
+        /* background-color: blue; */
+        margin-left: 0px !important;
+    }
+    .tag-main2{
+        text-align: center;
+    }
+    
+}
+.hrw{
+    width: 60%;
+}
+#btn23{
+    background-color: white;
+    color :#2395FF;
+}
