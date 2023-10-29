@@ -23,7 +23,7 @@ import { faArrowRightArrowLeft, faChevronUp, faArrowsUpDown, faPlaneDeparture } 
 
 const token = Cookies.get("token");
 
-function page() {
+function Page() {
     const router = useRouter();
     const params = useParams();
     const code = params.code;
@@ -334,4 +334,4 @@ function page() {
         </>
     )
 }
-export default privateRoute(page);
+export default privateRoute(Page);

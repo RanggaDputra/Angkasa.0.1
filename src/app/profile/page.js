@@ -16,7 +16,7 @@ import { useRouter } from "next/navigation";
 import axios from "axios"
 
 
-function page() {
+function Page() {
     const router = useRouter();
     const token = Cookies.get("token");
     const [openProfile, setOpenProfile] = useState(false);
@@ -35,7 +35,7 @@ function page() {
             confirmButtonText: "Yes, sure",
         }).then((result) => {
             if (result.isConfirmed) {
-                Swal.fire("Logout success", "bye", "success").then((confirm) => {
+                Swal.fire("Logout success", "Semoga Harimu Menyenangkan", "success").then((confirm) => {
                     setOpenProfile(false);
                     if (confirm) {
                         Cookies.remove("token");
@@ -211,4 +211,4 @@ function page() {
         </>
     )
 }
-export default privateRoute(page);
+export default privateRoute(Page);

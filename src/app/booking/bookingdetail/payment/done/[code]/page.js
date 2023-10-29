@@ -21,7 +21,7 @@ import Swal from "sweetalert2";
 
 const token = Cookies.get("token");
 
-export default function page() {
+export default function Page() {
     const router = useRouter();
     const params = useParams();
     const code = params.code;

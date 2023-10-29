@@ -18,7 +18,7 @@ import axios from "axios";
 import { useRouter } from "next/navigation";
 import { privateRoute } from "../../data/Private";
 
-function page() {
+function Page() {
     const [isLoading, setIsLoading] = useState(true);
     const [sortData, setSortData] = useState(false);
     const [flightData, setFlightData] = useState([]);
@@ -744,4 +744,4 @@ function page() {
     )
 }
 
-export default privateRoute(page);
+export default privateRoute(Page);

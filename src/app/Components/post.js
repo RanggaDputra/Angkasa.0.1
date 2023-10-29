@@ -220,8 +220,8 @@ export default function Post() {
 
                     </div>
                     <div style={{display:'flex',justifyContent:'center',marginTop:40,gap:55}}>
-                    <div className={styles['input-post']}><FontAwesomeIcon icon={faChevronLeft} style={{color:'white',width:20,marginLeft:'18',marginTop:'15'}}/></div>
-                    <div className={styles['input-poster']}><FontAwesomeIcon icon={faChevronRight} style={{color:'#2395FF',width:20,marginLeft:'18',marginTop:'15'}}/></div>
+                    <div className={styles['input-post']}><FontAwesomeIcon icon={faChevronLeft} style={{color:'white',width:20,marginLeft:'18',marginTop:'8'}}/></div>
+                    <div className={styles['input-poster']}><FontAwesomeIcon icon={faChevronRight} style={{color:'#2395FF',width:20,marginLeft:'18',marginTop:'8'}}/></div>
                 </div>
                 </div>
                 
