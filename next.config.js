@@ -3,6 +3,7 @@ const nextConfig = {
     images: {
         domains: ["daisycon.io"],
     },
+    crossorigin: 'anonymous',
 }
 
 module.exports = nextConfig

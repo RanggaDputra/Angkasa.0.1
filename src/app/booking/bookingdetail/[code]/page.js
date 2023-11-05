@@ -27,7 +27,7 @@ function Page() {
     const router = useRouter();
     const params = useParams();
     const code = params.code;
-    const API_URL = `https://easy-lime-seal-toga.cyclic.app/`;
+    
     const [isFlightPayment, setIsFlightPayment] = useState(true);
     const [isPassenger, setIsPassenger] = useState(true);
     const [insurance, setInsurance] = useState(false);
@@ -92,7 +92,7 @@ function Page() {
             };
 
             axios
-                .post(`${API_URL}booking/tickets/${code}`, postData, {
+                .post(`${process.env.NEXT_PUBLIC_API_URL}booking/tickets/${code}`, postData, {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },
@@ -121,7 +121,7 @@ function Page() {
 
     useEffect(() => {
         axios
-            .get(`${API_URL}airlines/flight/${code}`)
+            .get(`${process.env.NEXT_PUBLIC_API_URL}airlines/flight/${code}`)
             .then((response) => {
                 const data = response.data.data;
 
@@ -170,6 +170,7 @@ function Page() {
 
                 <div className={styles['col-menu']}>
                     <Image
+                    alt="icon"
                         color='#02C1FE'
                         src={fly}
                         width={150}
@@ -178,12 +179,12 @@ function Page() {
                         <div style={{ width: 600, marginLeft: -100, borderRadius: 10 }}><p className='text-white'>Contact Person Details</p>
                             <div className={styles['box']}>
                                 <form className={styles['tag-main2']}>
-                                    <label for="exampleFormControlInput1" class="form-label" style={{ color: '#9B96AB' }}>Full Name</label><br />
+                                    <label htmlFor="exampleFormControlInput1" className="form-label" style={{ color: '#9B96AB' }}>Full Name</label><br />
                                     <input type="text" name="name" placeholder='Username' className={styles['input-login']}  value={contactPerson.fullname1}
                                         onChange={(e) => setContactPerson({ ...contactPerson, fullname1: e.target.value })}></input><br />
-                                    <label for="exampleFormControlInput1" class="form-label" style={{ color: '#9B96AB' }}>Email</label><br />
+                                    <label htmlFor="exampleFormControlInput1" className="form-label" style={{ color: '#9B96AB' }}>Email</label><br />
                                     <input type="email" name="Email" placeholder='Email' className={styles['input-login']}></input><br />
-                                    <label for="exampleFormControlInput1" class="form-label" style={{ color: '#9B96AB' }}>Country</label><br />
+                                    <label htmlFor="exampleFormControlInput1" className="form-label" style={{ color: '#9B96AB' }}>Country</label><br />
                                     <select name="country1" id={styles['drop']} className="form-select" value={selectedCountry1} onChange={handleCountryChange1}>
                                         {countryData.map((country) => (
                                             <option key={country.code} value={country.name}>
@@ -199,9 +200,10 @@ function Page() {
                             <div className={styles['box2']}>
                                 <div className={styles['main-col22']}>
                                     <Image
+                                    src={isFlightData.photo}
+                                       alt="icon"
                                         className={styles['img-main-col']}
                                         color='#02C1FE'
-                                        src={isFlightData.photo}
                                         width={100}
                                         height={60}
                                     />
@@ -232,7 +234,7 @@ function Page() {
                                 </div>
                                 <div style={{ display: 'flex', marginLeft: 15 }}>
                                     <Image
-                                        // className={styles['img-main-col']}
+                                        alt="icon"
                                         color='#02C1FE'
                                         src={centang}
                                         width={20}
@@ -240,7 +242,7 @@ function Page() {
                                 </div>
                                 <div style={{ display: 'flex', marginLeft: 15 }}>
                                     <Image
-                                        // className={styles['img-main-col']}
+                                        alt="icon"
                                         color='#02C1FE'
                                         src={centang}
                                         width={20}
@@ -264,16 +266,16 @@ function Page() {
                             <p style={{ marginLeft: 20, marginTop: 20}}>Passenger : 1 Adult</p>
                             <div className="form-check form-switch form-check-reverse" style={{ marginLeft: 150, marginTop: 20 }}>
                                 <input className="form-check-input" type="checkbox" id="flexSwitchCheckReverse" />
-                                <label className="form-check-label" for="flexSwitchCheckReverse">Reverse switch checkbox input</label>
+                                <label className="form-check-label" htmlFor="flexSwitchCheckReverse">Reverse switch checkbox input</label>
                             </div>
                         </div>
                         <div >
-                            <label for="exampleFormControlInput1" class="form-label" style={{ color: '#9B96AB' }}>Title</label><br />
+                            <label htmlFor="exampleFormControlInput1" className="form-label" style={{ color: '#9B96AB' }}>Title</label><br />
                             <div  className="input-group mb-3" style={{ width: 100 }}>
 
                                 <select id={styles['drop']} className="form-select"  value={passengerDetails.title2}
                                         onChange={(e) => setPassengerDetails({ ...passengerDetails, title2: e.target.value })} >
-                                    <option selected value={"Mr."}>Mr.</option>
+                                    <option value={"Mr."}>Mr.</option>
                                     <option value={"Ms."}>Mrs.</option>
 
 
@@ -282,13 +284,13 @@ function Page() {
                             </div><hr style={{width:600}}/>
                             <form>
 
-                            <label for="exampleFormControlInput1" class="form-label" style={{ color: '#9B96AB' }}>Full Name</label><br />
+                            <label htmlFor="exampleFormControlInput1" className="form-label" style={{ color: '#9B96AB' }}>Full Name</label><br />
                             <input id={styles['drop']} type="text" name="name" placeholder='Username' className={styles['input-login']}  value={passengerDetails.fullname2}
                                         onChange={(e) => setPassengerDetails({ ...passengerDetails, fullname2: e.target.value })}></input><br />
                             </form><hr style={{width:600}}/>
                             
                             
-                            <label for="exampleFormControlInput1" class="form-label" style={{ color: '#9B96AB' }}>Title</label><br />
+                            <label htmlFor="exampleFormControlInput1" className="form-label" style={{ color: '#9B96AB' }}>Title</label><br />
                             <div className="input-group mb-3" style={{ width: 150 }}>
 
                                 <select  id={styles['drop']} className="form-select"  name="country" value={selectedCountry2}
@@ -311,7 +313,7 @@ function Page() {
                         <div style={{ display: 'flex'}}>
                             <div className="form-check" style={{marginTop:20,marginLeft:20}}>
                                 <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault"  onClick={handleInsurance}/>
-                                    <label className="form-check-label" for="flexCheckDefault">
+                                    <label className="form-check-label" htmlFor="flexCheckDefault">
                                     Travel Insurance
                                     </label>
                             </div>
@@ -324,7 +326,7 @@ function Page() {
                         
                     </div>
 
-                    <button id={styles['btn-save']} style={{marginLeft:200,width:300,marginTop:30,backgroundColor:'#2395FF'}}type="button" onClick={handleProceed} class="btn btn-primary"><Link href="/search" style={{ textDecoration: 'none',color:'white' }}>Proceed to Payment</Link></button>
+                    <button id={styles['btn-save']} style={{marginLeft:200,width:300,marginTop:30,backgroundColor:'#2395FF'}}type="button" onClick={handleProceed} className="btn btn-primary"><Link href="/search" style={{ textDecoration: 'none',color:'white' }}>Proceed to Payment</Link></button>
                 </div>
 
 

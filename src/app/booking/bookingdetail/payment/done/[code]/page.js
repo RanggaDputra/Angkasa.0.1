@@ -27,12 +27,12 @@ export default function Page() {
     const code = params.code;
     const [dataTicket, setDataTicket] = useState("");
     const [isLoading, setIsLoading] = useState(false);
-    const API_URL = `https://easy-lime-seal-toga.cyclic.app/`;
+
 
     useEffect(() => {
         setIsLoading(true);
         axios
-            .get(`${API_URL}booking/tickets/${code}`, {
+            .get(`${process.env.NEXT_PUBLIC_API_URL}booking/tickets/${code}`, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },
@@ -110,7 +110,7 @@ export default function Page() {
                             <p>Booking Pass<span style={{ float: 'right' }}><FontAwesomeIcon icon={faEllipsisVertical} width={20} /></span></p>
                         </div>
                         <div style={{ display: 'flex', justifyContent: 'center' }}>
-                            <Image src={border} width={600} >
+                            <Image alt="icon" src={border} width={600} >
 
                             </Image>
 
@@ -118,10 +118,10 @@ export default function Page() {
                         <div style={{ marginTop: -300, marginLeft: 100 }}>
                             <div style={{ display: 'flex' }}>
 
-                                <Image src={dataTicket?.result?.ticket?.airline?.photo} width={100}  height={70} />
+                                <Image alt="icon" src={dataTicket?.result?.ticket?.airline?.photo} width={100}  height={70} />
                                 
                                 <p style={{marginTop:25,marginLeft:30,fontWeight:'bold'}}>{dataTicket?.result?.ticket?.from?.code} </p>
-                                <Image src={plane} width={20} style={{marginTop:25,marginLeft:30}} />
+                                <Image alt="icon" src={plane} width={20} style={{marginTop:25,marginLeft:30}} />
                                 <p style={{marginTop:25,marginLeft:30,fontWeight:'bold'}}>{dataTicket?.result?.ticket?.to?.code}</p>
                             </div>
                             <div className="row mt-4">
@@ -139,10 +139,10 @@ export default function Page() {
 
                         </div>
                         <div style={{ marginLeft: 530, marginTop: -230 }}>
-                            <Image src={qr} width={50} /><br />
-                            <Image src={qr} width={50} /><br />
-                            <Image src={qr} width={50} /><br />
-                            <Image src={qr} width={50} />
+                            <Image alt="icon" src={qr} width={50} /><br />
+                            <Image alt="icon" src={qr} width={50} /><br />
+                            <Image alt="icon" src={qr} width={50} /><br />
+                            <Image alt="icon" src={qr} width={50} />
 
                         </div>
                         <div style={{ width: 250,marginLeft:480,marginTop:-129 }}>

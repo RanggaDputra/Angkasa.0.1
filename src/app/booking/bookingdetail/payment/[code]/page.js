@@ -29,13 +29,13 @@ export default function Page() {
     const params = useParams();
     const code = params.code;
     const [loading, setLoading] = useState(false);
-    const API_URL = `https://easy-lime-seal-toga.cyclic.app/`;
+
 
     const handleConfirm = async () => {
         console.log("Confirm button clicked");
         try {
             setLoading(true);
-            const response = await axios.put(`${API_URL}booking/status/${code}`, { statusId: 2 });
+            const response = await axios.put(`${process.env.NEXT_PUBLIC_API_URL}booking/status/${code}`, { statusId: 2 });
             if (response.status === 200) {
                 router.push(`/booking/bookingdetail/payment/done/${code}`);
             } else {
@@ -61,15 +61,15 @@ export default function Page() {
                             <div className="col-6" style={{ marginLeft: 50, width: 600, marginTop: 70 }}>
                                 <p>Payment Method</p>
                                 <div style={{ width: 550, backgroundColor: '#F5F6FA', padding: 10 }}>
-                                    <p>Paypal <Image style={{ float: 'right', marginRight: 30 }} src={paypal} width={20}></Image> </p>
-                                    <p>Credit Card <span style={{ float: 'right', marginRight: 30 }}> <Image src={mc} width={40} /><Image style={{ marginLeft: 10 }} src={visa} width={40} /><Image style={{ marginLeft: 10 }} src={stripe} width={40} /><Image style={{ marginLeft: 10 }} src={mc} width={40} /></span> </p>
+                                    <p>Paypal <Image alt="icon" style={{ float: 'right', marginRight: 30 }} src={paypal} width={20}/> </p>
+                                    <p>Credit Card <span style={{ float: 'right', marginRight: 30 }}> <Image alt="icon" src={mc} width={40} /><Image alt="icon" style={{ marginLeft: 10 }} src={visa} width={40} /><Image alt="icon" style={{ marginLeft: 10 }} src={stripe} width={40} /><Image alt="icon" style={{ marginLeft: 10 }} src={mc} width={40} /></span> </p>
                                 </div>
                                 <div>
                                     <label>
                                         Card number
                                     </label>
                                     <div className="input-group mb-3">
-                                        <span className="input-group-text" style={{ backgroundColor: 'transparent' }} ><Image src={cc} width={20} /></span>
+                                        <span className="input-group-text" style={{ backgroundColor: 'transparent' }} ><Image alt="icon" src={cc} width={20} /></span>
                                         <input id={styles['spn']} type="text" className="form-control" placeholder="000 000 000 000 00" aria-label="Username" aria-describedby="basic-addon1" />
                                     </div>
                                         <div className="row">
@@ -80,12 +80,12 @@ export default function Page() {
                                             </div>
                                             <div className="col-6"> <div className="col-6"><label>CVC/CVV</label>
                                             <div className="input-group mb-3" style={{width:276}}>
-                                            <span className="input-group-text" style={{ backgroundColor: 'transparent' }} ><Image src={lock} width={20} /></span>
+                                            <span className="input-group-text" style={{ backgroundColor: 'transparent' }} ><Image alt="icon" src={lock} width={20} /></span>
                                         <input id={styles['spn']} type="text" className="form-control" placeholder="000" aria-label="Username" aria-describedby="basic-addon1" />
                                     </div>
                                             </div></div>
                                         </div>
-                                        <p><Image src={lock} width={20} />Your transcation is secured with ssl certificate</p>
+                                        <p><Image alt="icon" src={lock} width={20} />Your transcation is secured with ssl certificate</p>
                                 </div>
                             </div>
                             <div className="col-6" style={{ width: 500, marginTop: 70 }}>
@@ -98,7 +98,7 @@ export default function Page() {
                                     <p style={{marginBottom:0}}>Today you pay(US Dollars)<span style={{float:'right'}}>/month</span></p>
                                     <p style={{fontSize:10}}>After 30 days $9.59</p><br/>
 
-                                    <button type="button" class="btn btn-primary" style={{width:500}} onClick={handleConfirm}>Try it Free 30 Days</button>
+                                    <button type="button" className="btn btn-primary" style={{width:500}} onClick={handleConfirm}>Try it Free 30 Days</button>
                                     <a style={{marginLeft:170}} href="#">Have a promo Code ?</a>
                                 </div>
                             </div>

@@ -19,8 +19,6 @@ export default function Page() {
     });
 
 
-    const API_URL = `https://easy-lime-seal-toga.cyclic.app/`;
-
     const toLogin = () => {
         router.push("/login");
     };
@@ -47,7 +45,7 @@ export default function Page() {
                 password: inputData.password,
             };
             axios
-                .post(`${API_URL}auth/register`, body)
+                .post(`${process.env.NEXT_PUBLIC_API_URL}auth/register`, body)
                 .then((res) => {
                     console.log(res.data);
                     Swal.fire({
@@ -79,6 +77,7 @@ export default function Page() {
                 <div className={styles['img-login']} style={{ backgroundColor: '#2395FF', width: 800, height: 646 }}>
                     <div className={styles['img-login']} style={{ marginLeft: 200, marginTop: 150 }}>
                         <Image
+                        alt='icon'
                             color='#02C1FE'
                             src={ilus}
                             width={350}
@@ -88,6 +87,7 @@ export default function Page() {
                 <div style={{ width: 600 }}>
                     <div style={{ display: 'flex', justifyContent: 'center', marginTop: 50, marginLeft: -150 }}>
                         <Image
+                        alt='icon'
                             color='#02C1FE'
                             src={icon}
                             width={50}
@@ -105,7 +105,7 @@ export default function Page() {
                                     <button type="submit" className="btn btn-primary" style={{ marginTop: 20, width: 250, marginBottom: 20 }}>Daftar</button>
                                     <div className="form-check">
                                         <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                                        <label className="form-check-label" for="flexCheckDefault">
+                                        <label className="form-check-label" htmlFor="flexCheckDefault">
                                             Accept Terms And Conditions
                                         </label>
                                     </div>

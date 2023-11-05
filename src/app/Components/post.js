@@ -12,8 +12,8 @@ import mahal from '../Assets/mahal.png'
 import singa from '../Assets/singapura.png'
 import syd from '../Assets/sydney.png'
 import styles from '../style/post.module.css'
-import { FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import { faChevronLeft ,faChevronRight} from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons'
 
 
 export default function Post() {
@@ -30,7 +30,7 @@ export default function Post() {
                         <Image
                             src={icon}
                             width={300}
-                        // marginRight={10}
+                            alt={icon}
                         />
                     </div>
 
@@ -41,13 +41,13 @@ export default function Post() {
                         <Image
                             src={iconn}
                             width={700}
-                        // marginRight={10}
+                            alt={icon}
                         />
                     </div>
                     <div style={{ marginRight: 100, marginTop: 100 }}>
 
                         <Image
-                            backgroundColor={'red'}
+                            alt={icon}
                             src={icon6}
                             width={200}
                         />
@@ -62,13 +62,13 @@ export default function Post() {
 
                     <div style={{ width: 150 }}>
                         <Image
-
+                            alt={icon}
                             src={mask}
                             width={150}
                         />
                         <div style={{ color: 'black', marginTop: -190 }}>
                             <Image
-
+                                alt={icon}
                                 src={over}
                                 width={150}
                             />
@@ -76,13 +76,13 @@ export default function Post() {
                         </div>
                     </div>
                     <div style={{ width: 150 }}><Image
-                        backgroundColor={'black'}
+                        alt={icon}
                         src={mask2}
                         width={150}
                     />
                         <div style={{ color: 'black', marginTop: -190 }}>
                             <Image
-
+                                alt={icon}
                                 src={over}
                                 width={150}
                             />
@@ -92,23 +92,24 @@ export default function Post() {
                     <div style={{ width: 150 }}><Image
                         src={mask}
                         width={150}
+                        alt={icon}
                     />
                         <div style={{ color: 'black', marginTop: -190 }}>
                             <Image
-
+                                alt={icon}
                                 src={over}
                                 width={150}
                             />
                             <h4 style={{ marginTop: -70, color: 'white' }}>Tokyo,<br />Japan<span>~</span></h4></div>
                     </div>
                     <div style={{ width: 150 }}><Image
-                        backgroundColor={'black'}
+                        alt={icon}
                         src={mask2}
                         width={150}
                     />
                         <div style={{ color: 'black', marginTop: -190 }}>
                             <Image
-
+                                alt={icon}
                                 src={over}
                                 width={150}
                             />
@@ -117,10 +118,11 @@ export default function Post() {
                     <div style={{ width: 150 }}><Image
                         src={mask}
                         width={150}
+                        alt={icon}
                     />
                         <div style={{ color: 'black', marginTop: -190 }}>
                             <Image
-
+                                alt={icon}
                                 src={over}
                                 width={150}
                             />
@@ -130,101 +132,110 @@ export default function Post() {
                 <div style={{ backgroundColor: '#2395FF', width: 800, height: 400, marginLeft: 'auto', marginRight: 'auto', marginTop: 50, borderRadius: 40 }}>
                     <h4 style={{ textAlign: 'center', paddingTop: 30, color: 'white' }}>T O P 1 0</h4>
                     <h4 style={{ textAlign: 'center', color: 'white' }}>Top 10 Destination</h4>
-                    <div style={{ display: 'flex', justifyContent: 'center',gap:20}}>
-                        <div style={{width: 100, height: 100 }}>
+                    <div style={{ display: 'flex', justifyContent: 'center', gap: 20 }}>
+                        <div style={{ width: 100, height: 100 }}>
                             <div>
                                 <Image
-                                    
+                                    alt={icon}
                                     src={out}
                                     width={100}
                                 />
-                                <div style={{marginTop:-90,marginLeft:10}}>
+                                <div style={{ marginTop: -90, marginLeft: 10 }}>
                                     <Image
-                                        
+                                        alt={icon}
+
                                         src={paris}
                                         width={80}
                                     />
                                 </div>
                             </div>
-                            <h3 style={{textAlign:'center',marginTop:30,color:'white',fontSize:18}}>Paris</h3>
+                            <h3 style={{ textAlign: 'center', marginTop: 30, color: 'white', fontSize: 18 }}>Paris</h3>
                         </div>
                         <div style={{ width: 100 }}>
-                        <div>
+                            <div>
                                 <Image
-                                    
+                                    alt={icon}
+
                                     src={out}
                                     width={100}
                                 />
-                                <div style={{marginTop:-90,marginLeft:10}}>
+                                <div style={{ marginTop: -90, marginLeft: 10 }}>
                                     <Image
-                                        
+                                        alt={icon}
+
                                         src={bali}
                                         width={80}
                                     />
                                 </div>
                             </div>
-                            <h3 style={{textAlign:'center',marginTop:30,color:'white',fontSize:18}}>Paris</h3>
+                            <h3 style={{ textAlign: 'center', marginTop: 30, color: 'white', fontSize: 18 }}>Paris</h3>
                         </div>
                         <div style={{ width: 100 }}>
-                        <div>
+                            <div>
                                 <Image
-                                    
+                                    alt={icon}
+
                                     src={out}
                                     width={100}
                                 />
-                                <div style={{marginTop:-90,marginLeft:10}}>
+                                <div style={{ marginTop: -90, marginLeft: 10 }}>
                                     <Image
-                                        
+                                        alt={icon}
+
                                         src={singa}
                                         width={80}
                                     />
                                 </div>
                             </div>
-                            <h3 style={{textAlign:'center',marginTop:30,color:'white',fontSize:18}}>Paris</h3>
+                            <h3 style={{ textAlign: 'center', marginTop: 30, color: 'white', fontSize: 18 }}>Paris</h3>
                         </div>
                         <div style={{ width: 100 }}>
-                        <div>
+                            <div>
                                 <Image
-                                    
+                                    alt={icon}
+
                                     src={out}
                                     width={100}
                                 />
-                                <div style={{marginTop:-90,marginLeft:10}}>
+                                <div style={{ marginTop: -90, marginLeft: 10 }}>
                                     <Image
-                                        
+                                        alt={icon}
+
                                         src={mahal}
                                         width={80}
                                     />
                                 </div>
                             </div>
-                            <h3 style={{textAlign:'center',marginTop:30,color:'white',fontSize:18}}>Paris</h3>
+                            <h3 style={{ textAlign: 'center', marginTop: 30, color: 'white', fontSize: 18 }}>Paris</h3>
                         </div>
                         <div style={{ width: 100 }}>
-                        <div>
+                            <div>
                                 <Image
-                                    
+                                    alt={icon}
+
                                     src={out}
                                     width={100}
                                 />
-                                <div style={{marginTop:-90,marginLeft:10}}>
+                                <div style={{ marginTop: -90, marginLeft: 10 }}>
                                     <Image
-                                        
+                                        alt={icon}
+
                                         src={syd}
                                         width={80}
                                     />
                                 </div>
                             </div>
-                            <h3 style={{textAlign:'center',marginTop:30,color:'white',fontSize:18}}>Paris</h3>
+                            <h3 style={{ textAlign: 'center', marginTop: 30, color: 'white', fontSize: 18 }}>Paris</h3>
                         </div>
 
 
                     </div>
-                    <div style={{display:'flex',justifyContent:'center',marginTop:40,gap:55}}>
-                    <div className={styles['input-post']}><FontAwesomeIcon icon={faChevronLeft} style={{color:'white',width:20,marginLeft:'18',marginTop:'8'}}/></div>
-                    <div className={styles['input-poster']}><FontAwesomeIcon icon={faChevronRight} style={{color:'#2395FF',width:20,marginLeft:'18',marginTop:'8'}}/></div>
+                    <div style={{ display: 'flex', justifyContent: 'center', marginTop: 40, gap: 55 }}>
+                        <div className={styles['input-post']}><FontAwesomeIcon icon={faChevronLeft} style={{ color: 'white', width: 20, marginLeft: '18', marginTop: '8' }} /></div>
+                        <div className={styles['input-poster']}><FontAwesomeIcon icon={faChevronRight} style={{ color: '#2395FF', width: 20, marginLeft: '18', marginTop: '8' }} /></div>
+                    </div>
                 </div>
-                </div>
-                
+
 
             </div>
 

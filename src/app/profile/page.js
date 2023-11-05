@@ -23,7 +23,7 @@ function Page() {
     const [flightData, setFlightData] = useState([]);
     const [userData, setUserData] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
-    const API_URL = `https://easy-lime-seal-toga.cyclic.app/`;
+   
     const handleLogout = () => {
         Swal.fire({
             title: "Confirm",
@@ -49,7 +49,7 @@ function Page() {
     useEffect(() => {
         setIsLoading(true);
         axios
-            .get(`${API_URL}booking/tickets`, {
+            .get(`${process.env.NEXT_PUBLIC_API_URL}booking/tickets`, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },
@@ -109,11 +109,13 @@ function Page() {
                         <div className={styles['aw12']}>
 
                             <Image
+                            alt="icon"
                                 color='#02C1FE'
                                 src={circle}
                                 width={150}
                             />
                             <Image
+                            alt="icon"
                                 className={styles['aw23']}
                                 color='#02C1FE'
                                 src={aset}
@@ -121,7 +123,7 @@ function Page() {
                             />
                         </div>
                         <div >
-                            <button id={styles['qwe']} type="button" class="btn btn-transparent text-primary">Select Photo</button>
+                            <button id={styles['qwe']} type="button" className="btn btn-transparent text-primary">Select Photo</button>
                         </div>
                         <h1 className='text-center' style={{ fontSize: 25, fontWeight: 'bold' }}>{userData.name}</h1>
                         <div className='text-center' style={{ marginBottom: 40 }}>
@@ -170,9 +172,9 @@ function Page() {
                                     <div>
                                         <form className={styles['form']}>
 
-                                            <label for="exampleFormControlInput1" class="form-label" style={{ color: '#9B96AB' }}>Email</label><br />
+                                            <label htmlFor="exampleFormControlInput1" className="form-label" style={{ color: '#9B96AB' }}>Email</label><br />
                                             <input type="email" name="name" placeholder='Email' className={styles['input-login']}></input><br />
-                                            <label for="exampleFormControlInput1" class="form-label" style={{ color: '#9B96AB', marginTop: 20 }}>Phone Number</label><br />
+                                            <label htmlFor="exampleFormControlInput1" className="form-label" style={{ color: '#9B96AB', marginTop: 20 }}>Phone Number</label><br />
                                             <input type="text" name="name" placeholder='+6281987654321' className={styles['input-login']}></input><br />
                                         </form>
                                     </div>
@@ -182,16 +184,16 @@ function Page() {
                                     <div>
                                         <form className={styles['form']}>
 
-                                            <label for="exampleFormControlInput1" class="form-label" style={{ color: '#9B96AB' }}>Full Name</label><br />
+                                            <label htmlFor="exampleFormControlInput1" className="form-label" style={{ color: '#9B96AB' }}>Full Name</label><br />
                                             <input type="text" name="name" placeholder='Mike Kowalskie' className={styles['input-login']}></input><br />
-                                            <label for="exampleFormControlInput1" class="form-label" style={{ color: '#9B96AB' }}>City</label><br />
+                                            <label htmlFor="exampleFormControlInput1" className="form-label" style={{ color: '#9B96AB' }}>City</label><br />
                                             <select id={styles['drop']} className="form-select">
-                                                <option selected>Medan</option>
+                                                <option>Medan</option>
                                                 <option value="1">Bengkulu</option>
                                             </select>
-                                            <label for="exampleFormControlInput1" class="form-label" style={{ color: '#9B96AB', marginTop: 20 }}>Address</label><br />
+                                            <label htmlFor="exampleFormControlInput1" className="form-label" style={{ color: '#9B96AB', marginTop: 20 }}>Address</label><br />
                                             <input type="text" name="name" placeholder='Medan, Indonesia' className={styles['input-login']}></input><br />
-                                            <label for="exampleFormControlInput1" class="form-label" style={{ color: '#9B96AB', marginTop: 20 }}>Post Code</label><br />
+                                            <label htmlFor="exampleFormControlInput1" className="form-label" style={{ color: '#9B96AB', marginTop: 20 }}>Post Code</label><br />
                                             <input type="text" name="name" placeholder='55555' className={styles['input-login']}></input><br />
                                         </form>
                                         <button id={styles['btn-save']}type="button" className="btn btn-primary" style={{float:'right',marginRight:60,width:100}}>Save</button>

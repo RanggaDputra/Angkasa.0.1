@@ -16,9 +16,10 @@ export default function Footer() {
 <div style={{display:'flex',justifyContent:'center',width:1120,height:270,gap:30,marginTop:120}}>
     <div style={{width:250}}>
     <Image
+                        alt={icon}
                         src={icon}
                         width={50}
-                        marginRight={10}
+                        
                     />
                     <h3 style={{marginLeft:60,marginTop:-35,marginBottom:50}}>Ankasa</h3>
                     <p style={{fontSize:13}}>Find your Flight and explore the</p>
@@ -38,12 +39,14 @@ export default function Footer() {
         <div style={{marginLeft:40,marginTop:60}}>
 
         <Image
+                        alt={icon}
                         src={apel}
                         width={150}
                         
                     />
                     <div style={{margin:20}}></div>
                     <Image
+                        alt={icon}
                         src={gugel}
                         width={150}
                         
@@ -58,6 +61,7 @@ export default function Footer() {
         <div>
 
         <Image
+                        alt={icon}
                         src={fb}
                         width={15}
                     />
@@ -67,6 +71,7 @@ export default function Footer() {
                     <Image
                         src={twit}
                         width={20}
+                        alt={icon}
                         
                     />
         </div>
@@ -75,6 +80,7 @@ export default function Footer() {
                     <Image
                         src={ig}
                         width={20}
+                        alt={icon}
                         
                     />
         </div>
@@ -83,6 +89,7 @@ export default function Footer() {
                     <Image
                         src={yt}
                         width={20}
+                        alt={icon}
                         
                     />
         </div>

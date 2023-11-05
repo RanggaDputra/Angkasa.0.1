@@ -20,14 +20,14 @@ export default function Page() {
   const [loggedIn, setLoggedIn] = useState(false);
   const [error, setError] = useState('');
 
-  const API_URL = `https://easy-lime-seal-toga.cyclic.app/`;
+  // const API_URL = `https://easy-lime-seal-toga.cyclic.app/`;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
 
     try {
-      const response = await axios.post(`${API_URL}/auth/login`, inputData); // Ganti 'login' dengan endpoint yang sesuai
+      const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}auth/login`, inputData); // Ganti 'login' dengan endpoint yang sesuai
       Swal.fire({
         icon: "success",
         title: "Login Success!",
@@ -69,6 +69,7 @@ export default function Page() {
         <div  className={styles['img-login']} style={{ backgroundColor: '#2395FF', width: 800, height: 646 }}>
           <div className={styles['img-login']}style={{ marginLeft: 200, marginTop: 150 }}>
             <Image
+            alt='icon'
               color='#02C1FE'
               src={ilus}
               width={350}
@@ -78,6 +79,7 @@ export default function Page() {
         <div style={{ width: 600 }}>
           <div style={{ display: 'flex', justifyContent: 'center', marginTop: 50, marginLeft: -150 }}>
             <Image
+            alt='icon'
               color='#02C1FE'
               src={icon}
               width={50}

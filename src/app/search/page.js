@@ -22,7 +22,7 @@ function Page() {
     const [flightData, setFlightData] = useState([]);
     const [userData, setUserData] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
-    const API_URL = `https://easy-lime-seal-toga.cyclic.app/`;
+
     const handleLogout = () => {
         Swal.fire({
             title: "Confirm",
@@ -48,7 +48,7 @@ function Page() {
     useEffect(() => {
         setIsLoading(true);
         axios
-            .get(`${API_URL}booking/tickets`, {
+            .get(`${process.env.NEXT_PUBLIC_API_URL}booking/tickets`, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },
@@ -108,11 +108,13 @@ function Page() {
                         <div className={styles['aw12']}>
 
                             <Image
+                            alt="icon"
                                 color='#02C1FE'
                                 src={circle}
                                 width={150}
                             />
                             <Image
+                            alt="icon"
                                 className={styles['aw23']}
                                 color='#02C1FE'
                                 src={aset}
@@ -120,7 +122,7 @@ function Page() {
                             />
                         </div>
                         <div >
-                            <button id={styles['qwe']} type="button" class="btn btn-transparent text-primary">Select Photo</button>
+                            <button id={styles['qwe']} type="button" className="btn btn-transparent text-primary">Select Photo</button>
                         </div>
                         <h1 className='text-center' style={{ fontSize: 25, fontWeight: 'bold' }}>{userData.name}</h1>
                         <div className='text-center' style={{ marginBottom: 40 }}>
@@ -166,7 +168,7 @@ function Page() {
                                 <h3 style={{ fontWeight: 'bold', paddingLeft: 30, fontSize: 20, marginTop: -10 }}>My Booking<span style={{ color: '#2395FF', float: 'right', fontSize: 15, marginRight: 20 }}>Order History</span></h3>
                             </div>
                     {flightData.map((flight, index) => (
-                            <div className={styles['asd2']}>
+                            <div key={index} className={styles['asd2']}>
                                 <p style={{ fontSize: 15 }}>{`${flight.takeoffDate}-${flight.takeoffTime}`}</p>
                                 <div>
                                     <p style={{ fontWeight: 'bold', fontSize: 20 }}>{flight.ticket?.from?.code} <FontAwesomeIcon style={{ color: '#979797' }} icon={faPlaneDeparture} className='mx-2'></FontAwesomeIcon> <span>{flight.ticket?.to?.code}</span></p>
